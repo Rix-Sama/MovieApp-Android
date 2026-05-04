@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="110dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="4dp">
+
+    <FrameLayout android:layout_width="110dp" android:layout_height="155dp">
+        <ImageView android:id="@+id/imgPoster" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:background="@color/bg_elevated" android:contentDescription="@null"/>
+        <FrameLayout android:id="@+id/blurOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/blur_overlay" android:visibility="gone">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:orientation="vertical" android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18+" android:textColor="@color/white" android:textSize="18sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Contenu\nsensible" android:textColor="@color/text_secondary" android:textSize="9sp" android:textAlignment="center" android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </FrameLayout>
+        <TextView android:id="@+id/tvRating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="top|end" android:layout_margin="6dp" android:paddingHorizontal="6dp" android:paddingVertical="2dp" android:textColor="@color/white" android:textSize="9sp" android:textStyle="bold" android:background="@drawable/bg_badge_red" android:visibility="gone"/>
+        <View android:layout_width="match_parent" android:layout_height="50dp" android:layout_gravity="bottom" android:background="@drawable/gradient_bottom"/>
+        <TextView android:id="@+id/tvScore" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="bottom|start" android:layout_margin="6dp" android:textColor="@color/star_color" android:textSize="10sp" android:textStyle="bold"/>
+    </FrameLayout>
+
+    <TextView android:id="@+id/tvTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:textColor="@color/text_primary" android:textSize="11sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end"/>
+    <TextView android:id="@+id/tvYear" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:textColor="@color/text_muted" android:textSize="10sp"/>
+</LinearLayout>

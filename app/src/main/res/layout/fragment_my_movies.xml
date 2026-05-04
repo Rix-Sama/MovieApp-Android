@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/myMoviesHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+            <View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_avatar" android:layout_marginEnd="7dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mes Films" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" android:fontFamily="sans-serif-black"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMovieCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 film"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewLocal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"/>
+
+    <!-- Empty state -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎬" android:textSize="56sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/no_local_movies" android:textColor="@color/text_secondary" android:textSize="15sp" android:textAlignment="center" android:lineSpacingExtra="4dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Appuyez sur + en bas à droite" android:textColor="@color/text_muted" android:textSize="13sp"/>
+    </LinearLayout>
+
+</FrameLayout>

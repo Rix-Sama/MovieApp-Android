@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_primary" android:fillViewport="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingBottom="40dp">
+
+        <!-- Header bar -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+            <LinearLayout android:id="@+id/btnBack" android:layout_width="38dp"
+                android:layout_height="38dp" android:background="@drawable/bg_back_btn"
+                android:gravity="center">
+                <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                    android:src="@drawable/ic_back" android:contentDescription="@null"/>
+            </LinearLayout>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Mon Profil"
+                android:textColor="@color/text_primary" android:textSize="18sp"
+                android:textStyle="bold" android:layout_marginStart="12dp"/>
+        </LinearLayout>
+
+        <!-- Avatar + nom -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center"
+            android:padding="32dp">
+
+            <TextView android:id="@+id/tvAvatarBig" android:layout_width="80dp"
+                android:layout_height="80dp" android:background="@drawable/bg_avatar"
+                android:gravity="center" android:text="AS" android:textColor="@color/white"
+                android:textSize="28sp" android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView android:id="@+id/tvFullName" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Prénom Nom"
+                android:textColor="@color/text_primary" android:textSize="22sp"
+                android:textStyle="bold" android:layout_marginBottom="6dp"/>
+
+            <TextView android:id="@+id/tvRoleBadge" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="PARENT"
+                android:textColor="@color/white" android:textSize="11sp"
+                android:textStyle="bold" android:paddingHorizontal="14dp"
+                android:paddingVertical="4dp" android:background="@drawable/bg_badge_red"/>
+        </LinearLayout>
+
+        <!-- Info cards -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingHorizontal="16dp">
+
+            <!-- Email -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card"
+                android:padding="16dp" android:layout_marginBottom="10dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Email" android:textColor="@color/text_muted"
+                    android:textSize="11sp" android:layout_marginBottom="4dp"/>
+                <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="email@exemple.com"
+                    android:textColor="@color/text_primary" android:textSize="15sp"/>
+            </LinearLayout>
+
+            <!-- Restriction Level -->
+            <LinearLayout android:id="@+id/cardRestriction"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card"
+                android:padding="16dp" android:layout_marginBottom="10dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Niveau de restriction" android:textColor="@color/text_muted"
+                    android:textSize="11sp" android:layout_marginBottom="4dp"/>
+                <TextView android:id="@+id/tvRestriction" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/text_primary"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <!-- Dashboard button (parent/admin only) -->
+            <Button android:id="@+id/btnDashboard"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_button_secondary"
+                android:text="⚙️  Tableau de bord"
+                android:textColor="@color/lumio_blue" android:textSize="14sp"
+                android:stateListAnimator="@null" android:layout_marginBottom="10dp"
+                android:visibility="gone"/>
+
+            <!-- Logout -->
+            <Button android:id="@+id/btnLogout"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_badge_red"
+                android:text="Déconnexion" android:textColor="@color/white"
+                android:textSize="14sp" android:textStyle="bold"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

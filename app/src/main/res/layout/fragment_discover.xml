@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_avatar" android:layout_marginEnd="7dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LUMIO" android:textColor="@color/text_primary" android:textSize="22sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:letterSpacing="0.15"/>
+                    </LinearLayout>
+
+                    <!-- Blur chip -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBlurToggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="Blur ON"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        app:chipBackgroundColor="@color/lumio_blue"
+                        app:chipCornerRadius="20dp"
+                        android:checkable="true"
+                        android:checked="true"
+                        android:layout_marginEnd="8dp"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+                    <!-- Avatar -->
+                    <TextView
+                        android:id="@+id/tvAvatar"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_avatar"
+                        android:gravity="center"
+                        android:text="AS"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <!-- Search -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_input"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:paddingHorizontal="14dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_search" android:alpha="0.5" android:contentDescription="@null" android:layout_marginEnd="10dp"/>
+                    <EditText
+                        android:id="@+id/editTextSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/search_hint"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="13sp"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch"/>
+                </LinearLayout>
+
+                <!-- Hero section -->
+                <FrameLayout
+                    android:id="@+id/heroSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/imgHero"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@null"
+                        android:background="@color/bg_surface"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_hero_gradient"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView android:id="@+id/tvHeroTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chargement…" android:textColor="@color/text_primary" android:textSize="22sp" android:textStyle="bold" android:layout_marginBottom="6dp"/>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                            <TextView android:id="@+id/tvHeroYear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginEnd="10dp"/>
+                            <TextView android:id="@+id/tvHeroScore" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/star_color" android:textSize="12sp" android:textStyle="bold" android:layout_marginEnd="10dp"/>
+                            <TextView android:id="@+id/tvHeroBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="10sp" android:textStyle="bold" android:paddingHorizontal="8dp" android:paddingVertical="2dp" android:background="@drawable/bg_badge_red" android:visibility="gone"/>
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <Button android:id="@+id/btnHeroPlay" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@color/white" android:text="▶  Lecture" android:textColor="@color/bg_primary" android:textSize="12sp" android:textStyle="bold" android:stateListAnimator="@null"/>
+                            <Button android:id="@+id/btnHeroInfo" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:background="@drawable/bg_button_secondary" android:text="+ Ma liste" android:textColor="@color/text_secondary" android:textSize="12sp" android:stateListAnimator="@null"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Trending section -->
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="🔥  Tendances" android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold" android:paddingHorizontal="16dp" android:layout_marginBottom="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerTrending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- For You section -->
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="🎭  Pour vous" android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold" android:paddingHorizontal="16dp" android:layout_marginBottom="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerMovies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Popular section -->
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="⭐  Les mieux notés" android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold" android:paddingHorizontal="16dp" android:layout_marginBottom="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerTopRated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="80dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</FrameLayout>

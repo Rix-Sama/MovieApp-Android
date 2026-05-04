@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lumio</string>
+    <string name="search_hint">Rechercher un film, une série…</string>
+    <string name="tab_discover">Découvrir</string>
+    <string name="tab_my_movies">Mes Films</string>
+    <string name="upload_movie">Importer un film</string>
+    <string name="sensitive_content">Contenu sensible</string>
+    <string name="blur_active">Blur actif</string>
+    <string name="no_local_movies">Aucun film importé\nAppuyez sur + pour ajouter un film</string>
+    <string name="login">Se connecter</string>
+    <string name="register">Créer un compte</string>
+    <string name="logout">Déconnexion</string>
+</resources>

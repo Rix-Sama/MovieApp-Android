@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Lumio Brand -->
+    <color name="lumio_blue">#1A56F5</color>
+    <color name="lumio_blue_dark">#0A3ABF</color>
+    <color name="lumio_star">#4F8EF7</color>
+    <color name="lumio_accent">#F5C518</color>
+
+    <!-- Backgrounds deep navy -->
+    <color name="bg_primary">#000820</color>
+    <color name="bg_surface">#050F35</color>
+    <color name="bg_card">#0A1635</color>
+    <color name="bg_elevated">#0D1A3A</color>
+    <color name="bg_input">#0A1635</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8AAAD5</color>
+    <color name="text_muted">#2A4A7A</color>
+    <color name="text_hint">#4A6AAA</color>
+
+    <!-- Semantic -->
+    <color name="star_color">#F5C518</color>
+    <color name="badge_parent">#1A56F5</color>
+    <color name="badge_enfant">#0F6E56</color>
+    <color name="badge_admin">#E50914</color>
+    <color name="badge_r">#E50914</color>
+    <color name="blur_overlay">#CC000000</color>
+    <color name="divider">#0D1A3A</color>
+    <color name="border">#1E3070</color>
+
+    <!-- Aliases compat -->
+    <color name="brand_primary">#1A56F5</color>
+    <color name="brand_primary_dark">#0A3ABF</color>
+    <color name="brand_accent">#F5C518</color>
+    <color name="bg_surface_compat">#050F35</color>
+    <color name="local_badge">#0F6E56</color>
+    <color name="rating_badge">#E50914</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_primary">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Recherche" android:textColor="@color/text_primary"
+            android:textSize="22sp" android:textStyle="bold"
+            android:fontFamily="sans-serif-black" android:layout_marginBottom="12dp"/>
+
+        <!-- Search input -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+            android:orientation="horizontal" android:background="@drawable/bg_input"
+            android:paddingHorizontal="14dp" android:gravity="center_vertical">
+
+            <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                android:src="@drawable/ic_search" android:alpha="0.5"
+                android:contentDescription="@null" android:layout_marginEnd="10dp"/>
+
+            <EditText android:id="@+id/etSearch" android:layout_width="0dp"
+                android:layout_height="match_parent" android:layout_weight="1"
+                android:background="@null" android:hint="Titre, acteur, genre…"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_muted"
+                android:textSize="14sp" android:inputType="text"
+                android:imeOptions="actionSearch" android:singleLine="true"/>
+
+            <TextView android:id="@+id/btnClear" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="✕"
+                android:textColor="@color/text_muted" android:textSize="14sp"
+                android:padding="4dp" android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Loading -->
+    <ProgressBar android:id="@+id/progressSearch" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+        android:indeterminateTint="@color/lumio_blue" android:visibility="gone"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Empty state -->
+    <LinearLayout android:id="@+id/emptySearch" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical"
+        android:gravity="center" android:padding="32dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔍" android:textSize="56sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:text="Recherchez un film"
+            android:textColor="@color/text_secondary" android:textSize="16sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:text="Tapez au moins 2 caractères"
+            android:textColor="@color/text_muted" android:textSize="13sp"/>
+    </LinearLayout>
+
+    <!-- Results -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerSearch"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:paddingHorizontal="8dp" android:paddingBottom="80dp"
+        android:clipToPadding="false" android:visibility="gone"/>
+
+</LinearLayout>

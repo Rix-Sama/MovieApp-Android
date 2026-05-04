@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Header -->
+    <LinearLayout android:id="@+id/watchlistHeader"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingHorizontal="16dp"
+        android:paddingTop="16dp" android:paddingBottom="12dp"
+        android:gravity="center_vertical">
+
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Ma Liste"
+            android:textColor="@color/text_primary" android:textSize="22sp"
+            android:textStyle="bold" android:fontFamily="sans-serif-black"/>
+
+        <TextView android:id="@+id/tvWatchlistCount" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="0 film"
+            android:textColor="@color/text_muted" android:textSize="12sp"/>
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerWatchlist"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_marginTop="60dp" android:paddingBottom="80dp"
+        android:clipToPadding="false"/>
+
+    <!-- Empty state -->
+    <LinearLayout android:id="@+id/emptyWatchlist"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:orientation="vertical"
+        android:gravity="center" android:padding="32dp" android:visibility="gone">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔖" android:textSize="56sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:text="Votre liste est vide"
+            android:textColor="@color/text_secondary" android:textSize="16sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ajoutez des films depuis l'accueil"
+            android:textColor="@color/text_muted" android:textSize="13sp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+</FrameLayout>

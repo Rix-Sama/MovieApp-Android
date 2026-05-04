@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        android:paddingTop="56dp"
+        android:paddingBottom="40dp">
+
+        <View android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_avatar" android:layout_marginBottom="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LUMIO"
+            android:textColor="@color/text_primary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.2"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Créer votre compte"
+            android:textColor="@color/text_hint"
+            android:textSize="14sp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Nom -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nom" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etNom" android:layout_width="match_parent" android:layout_height="52dp" android:background="@drawable/bg_input" android:paddingHorizontal="16dp" android:inputType="textPersonName" android:hint="Votre nom" android:textColor="@color/text_primary" android:textColorHint="@color/text_muted" android:textSize="14sp" android:layout_marginBottom="14dp"/>
+
+        <!-- Prénom -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Prénom" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etPrenom" android:layout_width="match_parent" android:layout_height="52dp" android:background="@drawable/bg_input" android:paddingHorizontal="16dp" android:inputType="textPersonName" android:hint="Votre prénom" android:textColor="@color/text_primary" android:textColorHint="@color/text_muted" android:textSize="14sp" android:layout_marginBottom="14dp"/>
+
+        <!-- Email -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Adresse email" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etEmail" android:layout_width="match_parent" android:layout_height="52dp" android:background="@drawable/bg_input" android:paddingHorizontal="16dp" android:inputType="textEmailAddress" android:hint="exemple@email.com" android:textColor="@color/text_primary" android:textColorHint="@color/text_muted" android:textSize="14sp" android:layout_marginBottom="14dp"/>
+
+        <!-- Password -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mot de passe" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etPassword" android:layout_width="match_parent" android:layout_height="52dp" android:background="@drawable/bg_input" android:paddingHorizontal="16dp" android:inputType="textPassword" android:hint="6 caractères minimum" android:textColor="@color/text_primary" android:textColorHint="@color/text_muted" android:textSize="14sp" android:layout_marginBottom="20dp"/>
+
+        <!-- Role -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Je suis…" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="28dp">
+
+            <RadioButton
+                android:id="@+id/rbParent"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="👨‍👧  Parent"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:button="@null"
+                android:gravity="center"
+                android:background="@drawable/bg_role_selector"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rbEnfant"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="🧒  Enfant"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:button="@null"
+                android:gravity="center"
+                android:background="@drawable/bg_role_selector"/>
+        </RadioGroup>
+
+        <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginBottom="12dp" android:indeterminateTint="@color/lumio_blue" android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_button_primary"
+            android:text="CRÉER MON COMPTE"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:letterSpacing="0.1"
+            android:stateListAnimator="@null"/>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
+            android:text="Déjà un compte ? Se connecter"
+            android:textColor="@color/lumio_blue"
+            android:textSize="13sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>
